@@ -1,1 +1,5 @@
 # proyecto2--digitalizacion
+
+
+## PROYECTO DIGITILIZACIÑON 
+Mi proyecto consiste en un programa que traduzca de español a inglés todo lo que tengas copiado en el portapapeles sin tener que copiar y pegar. Funciona gracias a que al copiar, el programa reconoce que frase/palabra tiene almacenada en el portapapeles, y lo traduce mediante la API de google.translater.
