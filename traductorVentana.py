@@ -3,6 +3,12 @@ import time
 from googletrans import Translator
 import tkinter as tk
 
+import pyperclip
+import time
+from googletrans import Translator
+import tkinter as tk
+import re
+
 class TranslatorApp:
     def __init__(self, root):
         self.root = root
@@ -28,6 +34,16 @@ class TranslatorApp:
         
         self.actualizar_traduccion()
     
+    def es_url(self, texto):
+        
+        patron_url = re.compile(
+            r'^(https?:\/\/)?'          
+            r'(www\.)?'                 
+            r'([a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+)' 
+            r'(\/\S*)?$'                
+        )
+        return patron_url.match(texto) is not None
+
     def traducir(self, texto):
         try:
             traduccion = self.traductor.translate(texto, src="en", dest="es")
@@ -39,10 +55,13 @@ class TranslatorApp:
         nuevo_texto = pyperclip.paste().strip()
         if nuevo_texto and nuevo_texto != self.texto_copiado:
             self.texto_copiado = nuevo_texto
-            texto_traducido = self.traducir(nuevo_texto)
+            if self.es_url(nuevo_texto):
+                texto_traducido = nuevo_texto
+            else:
+                texto_traducido = self.traducir(nuevo_texto)
             self.texto_original.config(text=nuevo_texto)
             self.texto_traducido.config(text=texto_traducido)
-        self.root.after(1000, self.actualizar_traduccion)  # Repite la comprobación cada 1000 ms
+        self.root.after(1000, self.actualizar_traduccion)  
         
 if __name__ == "__main__":
     root = tk.Tk()
