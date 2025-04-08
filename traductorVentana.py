@@ -10,7 +10,18 @@ import tkinter as tk
 import re
 
 class TranslatorApp:
+    """
+    Simple translator app that checks the clipboard every second.
+    If it finds new text, it translates it from English to Spanish
+    and shows both the original and translated text in a small window.
+    """    
     def __init__(self, root):
+        """
+        Sets up the app window and UI elements.
+        
+        Parameters:
+            root (tk.Tk): The main window of the application.
+        """
         self.root = root
         self.root.title("Traductor")
         self.root.geometry("400x200")
@@ -35,7 +46,7 @@ class TranslatorApp:
         self.actualizar_traduccion()
     
     def es_url(self, texto):
-        
+
         patron_url = re.compile(
             r'^(https?:\/\/)?'          
             r'(www\.)?'                 
@@ -50,10 +61,10 @@ class TranslatorApp:
             return traduccion.text
         except Exception as e:
             return "Error en la traducción"
-    
+
     def actualizar_traduccion(self):
         nuevo_texto = pyperclip.paste().strip()
-        if nuevo_texto and nuevo_texto != self.texto_copiado:
+        if nuevo_texto != self.texto_copiado:
             self.texto_copiado = nuevo_texto
             if self.es_url(nuevo_texto):
                 texto_traducido = nuevo_texto
@@ -62,8 +73,15 @@ class TranslatorApp:
             self.texto_original.config(text=nuevo_texto)
             self.texto_traducido.config(text=texto_traducido)
         self.root.after(1000, self.actualizar_traduccion)  
+
+
+def main():
+        """
+        Abre la ventana del pograma y permite su ejecución.
+        """
+        root = tk.Tk()
+        app = TranslatorApp(root)
+        root.mainloop()
         
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = TranslatorApp(root)
-    root.mainloop()
+    main()
