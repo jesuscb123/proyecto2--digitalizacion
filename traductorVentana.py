@@ -46,7 +46,15 @@ class TranslatorApp:
         self.actualizar_traduccion()
     
     def es_url(self, texto):
-
+        """
+        Checks if the given text is a URL.
+        
+        Parameters:
+            text (str): The text to be checked.
+        
+        Returns:
+            bool: True if the text is a URL, False otherwise.
+        """
         patron_url = re.compile(
             r'^(https?:\/\/)?'          
             r'(www\.)?'                 
@@ -56,6 +64,15 @@ class TranslatorApp:
         return patron_url.match(texto) is not None
 
     def traducir(self, texto):
+        """
+         Translates text from English to Spanish.
+        
+        Parameters:
+            text (str): The text to be translated.
+        
+        Returns:
+            str: The translated text, or an error message if translation fails.
+        """
         try:
             traduccion = self.traductor.translate(texto, src="en", dest="es")
             return traduccion.text
@@ -63,6 +80,10 @@ class TranslatorApp:
             return "Error en la traducción"
 
     def actualizar_traduccion(self):
+        """
+        Periodically checks the clipboard for new text.
+        If new text is found, it translates and updates the labels.
+        """
         nuevo_texto = pyperclip.paste().strip()
         if nuevo_texto != self.texto_copiado:
             self.texto_copiado = nuevo_texto
@@ -77,7 +98,8 @@ class TranslatorApp:
 
 def main():
         """
-        Abre la ventana del pograma y permite su ejecución.
+        Launches the application window and starts the main loop.
+
         """
         root = tk.Tk()
         app = TranslatorApp(root)
