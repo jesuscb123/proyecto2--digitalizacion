@@ -2,11 +2,6 @@ import pyperclip
 import time
 from googletrans import Translator
 import tkinter as tk
-
-import pyperclip
-import time
-from googletrans import Translator
-import tkinter as tk
 import re
 
 class TranslatorApp:
@@ -23,29 +18,29 @@ class TranslatorApp:
             root (tk.Tk): The main window of the application.
         """
         self.root = root
-        self.root.title("Traductor")
+        self.root.title("Translator")
         self.root.geometry("400x200")
-        self.root.attributes('-alpha', 0.8)  # Hace la ventana semitransparente
-        self.root.attributes('-topmost', True)  # Mantiene la ventana siempre encima
+        self.root.attributes('-alpha', 0.8)  # Makes the window semi-transparent
+        self.root.attributes('-topmost', True)  # Keeps the window always on top
         
-        self.traductor = Translator()  # Crear una única instancia del traductor
-        self.texto_copiado = ""
+        self.translator = Translator()  # Create a single instance of the translator
+        self.copied_text = ""
         
-        self.label_original = tk.Label(root, text="Texto copiado:", font=("Arial", 12))
-        self.label_original.pack(pady=5)
+        self.original_label = tk.Label(root, text="Copied Text:", font=("Arial", 12))
+        self.original_label.pack(pady=5)
         
-        self.texto_original = tk.Label(root, text="", wraplength=350, font=("Arial", 10), fg="blue")
-        self.texto_original.pack()
+        self.original_text = tk.Label(root, text="", wraplength=350, font=("Arial", 10), fg="blue")
+        self.original_text.pack()
         
-        self.label_traducido = tk.Label(root, text="Traducción:", font=("Arial", 12))
-        self.label_traducido.pack(pady=5)
+        self.translated_label = tk.Label(root, text="Translation:", font=("Arial", 12))
+        self.translated_label.pack(pady=5)
         
-        self.texto_traducido = tk.Label(root, text="", wraplength=350, font=("Arial", 10), fg="green")
-        self.texto_traducido.pack()
+        self.translated_text = tk.Label(root, text="", wraplength=350, font=("Arial", 10), fg="green")
+        self.translated_text.pack()
         
-        self.actualizar_traduccion()
+        self.update_translation()
     
-    def es_url(self, texto):
+    def is_url(self, text):
         """
         Checks if the given text is a URL.
         
@@ -55,17 +50,17 @@ class TranslatorApp:
         Returns:
             bool: True if the text is a URL, False otherwise.
         """
-        patron_url = re.compile(
+        url_pattern = re.compile(
             r'^(https?:\/\/)?'          
             r'(www\.)?'                 
             r'([a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+)' 
             r'(\/\S*)?$'                
         )
-        return patron_url.match(texto) is not None
+        return url_pattern.match(text) is not None
 
-    def traducir(self, texto):
+    def translate(self, text):
         """
-         Translates text from English to Spanish.
+        Translates text from English to Spanish.
         
         Parameters:
             text (str): The text to be translated.
@@ -74,36 +69,35 @@ class TranslatorApp:
             str: The translated text, or an error message if translation fails.
         """
         try:
-            traduccion = self.traductor.translate(texto, src="en", dest="es")
-            return traduccion.text
+            translation = self.translator.translate(text, src="en", dest="es")
+            return translation.text
         except Exception as e:
-            return "Error en la traducción"
+            return "Translation Error"
 
-    def actualizar_traduccion(self):
+    def update_translation(self):
         """
         Periodically checks the clipboard for new text.
         If new text is found, it translates and updates the labels.
         """
-        nuevo_texto = pyperclip.paste().strip()
-        if nuevo_texto != self.texto_copiado:
-            self.texto_copiado = nuevo_texto
-            if self.es_url(nuevo_texto):
-                texto_traducido = nuevo_texto
+        new_text = pyperclip.paste().strip()
+        if new_text != self.copied_text:
+            self.copied_text = new_text
+            if self.is_url(new_text):
+                translated_text = new_text
             else:
-                texto_traducido = self.traducir(nuevo_texto)
-            self.texto_original.config(text=nuevo_texto)
-            self.texto_traducido.config(text=texto_traducido)
-        self.root.after(1000, self.actualizar_traduccion)  
+                translated_text = self.translate(new_text)
+            self.original_text.config(text=new_text)
+            self.translated_text.config(text=translated_text)
+        self.root.after(1000, self.update_translation)  
 
 
 def main():
-        """
-        Launches the application window and starts the main loop.
-
-        """
-        root = tk.Tk()
-        app = TranslatorApp(root)
-        root.mainloop()
+    """
+    Launches the application window and starts the main loop.
+    """
+    root = tk.Tk()
+    app = TranslatorApp(root)
+    root.mainloop()
         
 if __name__ == "__main__":
     main()

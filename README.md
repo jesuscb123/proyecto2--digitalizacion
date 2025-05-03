@@ -9,3 +9,18 @@ It works by detecting any phrase or word that exists in the clipboard, meaning a
 
 ## Instructions for deployment:
 To deploy this project, you simply need to have Python installed on your computer. Once it's installed, download "traductorVentana.py", run it, and a pop-up window will appear indicating that the program has started. It will then be ready to copy and translate anything you need.
+
+![alt text](./images/image4.png)
+
+## Usage examples
+1. Basic phrase: Good morning!
+2. The popup window displays: ¡Buen día!
+![alt text](./images/image.png)
+
+### The translator works in real time.
+1. your copy: I love programming.
+2. Popup: Me encanta la programación.
+![alt text](./images/image2.png)
+3. Then you copy: This is very interesting.
+4. Updated popup: Esto es muy interesante.
+![alt text](./images/image3.png)
