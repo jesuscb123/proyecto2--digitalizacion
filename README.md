@@ -18,12 +18,16 @@ To deploy this project, you simply need to have Python installed on your compute
 ## Usage examples
 1. Basic phrase: Good morning!
 2. The popup window displays: ¡Buen día!
+   
 ![alt text](./images/image.png)
 
 ### The translator works in real time.
 1. your copy: I love programming.
 2. Popup: Me encanta la programación.
+   
 ![alt text](./images/image2.png)
-3. Then you copy: This is very interesting.
-4. Updated popup: Esto es muy interesante.
+
+4. Then you copy: This is very interesting.
+5. Updated popup: Esto es muy interesante.
+
 ![alt text](./images/image3.png)
