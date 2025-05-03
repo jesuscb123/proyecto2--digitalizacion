@@ -16,12 +16,31 @@ To deploy this project, you simply need to have Python installed on your compute
 ![alt text](./images/image4.png)
 
 ## Usage examples
-1. Basic phrase: Good morning!
-2. The popup window displays: ¡Buen día!
-   
-![alt text](./images/image.png)
+This real-time translator uses the Google Translate API to translate text from one language to another. The data flow between the various components works as follows:
+1. **User Interaction**: The user enters the text to be translated, which is captured by the pop-up window.
+2. **Translation Process**: The entered text is sent to the Google Translate API for processing.
+3. **Real-Time Update**: The translation result is received and displayed in the same pop-up window.
+4. **Window Update**: The interface automatically updates without requiring user intervention.
 
-### The translator works in real time.
+
+## Integration Between Data and Aplications
+The system is designed to integrate effectively with the following components:
+
+**Google Translate API**: Facilitates real-time text translation.
+
+**Operating System**: The app runs on platforms compatible with Kotlin and is adaptable to both Windows and macOS.
+
+**Graphical Interface**: Uses Tkinter to create the interactive pop-up window, allowing for the real-time display of translations.
+
+## Proposals for Improving Interoperability
+**Support for Other Translation APIs**: Enhance interoperability by enabling the app to connect to additional translation services (Microsoft Translator).
+
+**Cross-Platform Support**: Improve integration to make the application fully functional on both Android and desktop platforms (Windows, macOS, and Linux) by leveraging Python's cross-platform libraries.
+
+**Optimization for Slow Connections**: Implement an option to cache frequently translated texts, so the system does not always rely on an internet connection to translate previously translated content.
+
+## Basic Example
+#### The translator works in real time.
 1. your copy: I love programming.
 2. Popup: Me encanta la programación.
    
@@ -31,3 +50,5 @@ To deploy this project, you simply need to have Python installed on your compute
 5. Updated popup: Esto es muy interesante.
 
 ![alt text](./images/image3.png)
+
+
