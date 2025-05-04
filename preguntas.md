@@ -66,3 +66,86 @@ Los datos en mi programa no pueden ser manipulados, debido a que solo se encarga
 
     Debido a que solo es copiar lo que quieras y se encarga de traducir, no necesitas de conocomientos avanzados sobre tecnología, mi programa está al alcande de todos. Simplemente ejecutar, copiar y ya aparece el texto traducido. 
 
+
+
+### PROYECTO 3 FASE 2 PREGUNTAS 
+#### Criterio 6a) Objetivos estratégicos:
+- **¿Qué objetivos estratégicos específicos de la empresa aborda tu software?**
+    Mi software de traductor en tiempo real consigue abordar los siguientes objetivos:
+    - Mejorar la productividad: Debido a que el software traduce en tiempo real, podemos mejorar la productividad ya que la mayoría de instrucciones o documentación de las herramientas o programas están en inglés. 
+    - Facilitar la comunicacion en la empresa: Podemos mejorar la comunicación al facilitar la traducción de emails, mensajes en tiempo real.
+- **¿Cómo se alinea el software con la estrategia general de digitalización?**
+    
+    Se alinea con la estrategia de digitalización al automatizar traducciones. Esta herramienta apoya la transformación digital al ofrecer en tiempo real, una traducción de inglés a español en cuestión de segundos sin tener que buscar palabras en un diccionario físico.
+#### Criterio 6b) Áreas de negocio y comunicaciones:
+- ¿Qué áreas de la empresa (producción, negocio, comunicaciones) se ven más beneficiadas con tu software?
+    Las áreas de comunicación son las que más saldrian beneficiadas en la empresa. El software permite traducciones en tiempo real de contenido inglés a español en cuestión de segundos, lo que facilita la traducción de correos, documentos o chats con clientes internacionales.
+    
+- ¿Qué impacto operativo esperas en las operaciones diarias?
+    
+    Reducción de tiempo y mayor productividad. Por ejemplo, una empresa de desarrolladores de software, los errores que se generen se suelen mostrar en inglés, para una persona que no tenga conocimientos del idioma, podría traducir ese error en tiempo real en segundos, evitando las ayudas o pérdidas de tiempo buscando.
+
+#### Criterio 6c) Áreas susceptibles de digitalización:
+- ¿Qué áreas de la empresa son más susceptibles de ser digitalizadas con tu software?
+
+    El área de comunicación y la gestión de documentación son las más susceptiblies de digitalización. Estas áreas todavía dependen de conocimientos previos sobre el idioma o realizar búsquedas costosas para traducir. Mi software automatiza el proceso ya que traduce en tiempo real.
+    
+- ¿Cómo mejorará la digitalización las operaciones en esas áreas?
+    
+    Permitirá la traducción de información en tiempo real y sin ayuda externa, lo cual aumenta la productividad y optimiza flujos de trabajo.  Agiliza el acceso a contenidos de inglés sin depender de herramientas externas que puedan interrumpir el ritmo de trabajo.
+
+#### Criterio 6d) Encaje de áreas digitalizadas (AD):
+- ¿Cómo interactúan las áreas digitalizadas con las no digitalizadas?
+
+    Las áreas digitalizadas interactúan constantemente con áreas no digitalizadas, por ejemplo con la atención al cliente de manera presencial o leer documentos físicos que estén en inglés.
+- ¿Qué soluciones o mejoras propondrías para integrar estas áreas?
+    
+    Propondría formar al personal de áreas que no estén digitalizadas en el uso básico de este software para que puedan agilizar sus tareas. También se podría crear el software para móviles con una interfaz muy intuitiva para que el usuario menos experimentado pueda utilizarlo sin problemas.
+#### Criterio 6e) Necesidades presentes y futuras:
+- ¿Qué necesidades actuales de la empresa resuelve tu software?
+    
+    - Necesidades: 
+        - La necesidad de traducir rápidamente contenidos en inglés cómo correos, chats, páginas web, documentos, etc. Evita depdender de herramientas externas y mejora la comprensión si el usuario tiene pocos o ningún conocimiento del idioma.
+        - Aumenta la eficencia en tareas que requieran conocimientos de inglés.
+    
+    - Mejoras propuestas:
+        - Añadir la traducción de más idiomas para mejorar la compresión de documentos que se encuentre en cuaqluier idioma.
+        - Traducir texto de imágenes.
+        - Traducir en tiempo real a través de la cámara.
+        - Detectar el idioma en el que se encuentre una página o documento y se traduzca sin necesidad de copiar.
+
+#### Criterio 6f) Relación con tecnologías:
+- ¿Qué tecnologías habilitadoras has empleado y cómo impactan en las áreas de la empresa?
+
+    He empleado una api que traduce los textos enviados, el acceso al portapapeles del sistema para obtener el texto sin necesidad de pegar y poder ahorrar tiempo, además de una interfaz gráfica básica e intuitiva para poder ser utilizado por cualquier usuario.
+    Impactan directamente en las áreas de comunicación, permitiendo traducir mensajes internacionales en tiempo real. En cuánto al negocio, facilitando la traducción sin demoras ni errores.
+- ¿Qué beneficios específicos aporta la implantación de estas tecnologías?
+
+    - Mayor velocidad en comprensión de información.
+    - Integrar a usuarios sin conocimientos ni equipos avanzados.
+    - Autonomía del personal, ya que no depende de herramientas externas.
+    - Menor interrupciones en el flujo de trabajo.
+
+#### Criterio 6g) Brechas de seguridad:
+- ¿Qué posibles brechas de seguridad podrían surgir al implementar tu software?
+
+    Debido a que mi sotware recopila textos del portapapeles, podría contener datos sensibles/privados que como contraseñas o datos personales. 
+- ¿Qué medidas concretas propondrías para mitigarlas?
+
+    Propondría las siguientes medidas:
+        
+    - Detectar si se trata de datos sensibles lo que haya copiado en el portapapeles y utilizar sistemas de cifrado para que no sea accesible ni visible la información.
+    - Detectar datos sensibles y que estos no sean enviados a la API.
+    - Controlar quién puede acceder al software.
+
+#### Criterio 6h) Tratamiento de datos y análisis:
+- ¿Cómo se gestionan los datos en tu software y qué metodologías utilizas?
+
+    El texto a traducir se obtiene directamente del portapapeles, lo traduce y se muestra al usuario, en ningún momento se almacena esa información ni deja rastro.
+    Mi software trabaja en memoria, así que no guarda información a largo plazo. 
+    Aplica una metodología de lectura y procesamiento en tiempo real, que evita la acumulación de datos sensibles. Además implemento una función que verifica si lo que está copiado es una URL, para evitar llamadas innecesarias a la API ya que los enlaces no tendrán traducción.
+- ¿Qué haces para garantizar la calidad y consistencia de los datos?
+
+    - El software compara el texto que debe traducir con el texto anterior traducido, si es el mismo, evita traducir constantamente el mismo texto.
+    - Detecta si el texto es una URL para evitar llamadas innecesarias a la API. 
+    - Utilizo una api de google translate para proporcionar traducciones válidas en tiempo real.
