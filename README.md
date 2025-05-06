@@ -1,6 +1,6 @@
 # proyecto2--digitalizacion
 
-### TRADUCTOR EN TIEMPO REAL
+### TRADUCTOR IN REAL TIME!
 
 ## Welcome to the real-time translator!
 - This project was created with the idea of helping millions of people who either don’t know English or are currently learning it, making their lives easier through real-time translation.
