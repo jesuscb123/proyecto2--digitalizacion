@@ -79,6 +79,7 @@ Los datos en mi programa no pueden ser manipulados, debido a que solo se encarga
     Se alinea con la estrategia de digitalización al automatizar traducciones. Esta herramienta apoya la transformación digital al ofrecer en tiempo real, una traducción de inglés a español en cuestión de segundos sin tener que buscar palabras en un diccionario físico.
 #### Criterio 6b) Áreas de negocio y comunicaciones:
 - ¿Qué áreas de la empresa (producción, negocio, comunicaciones) se ven más beneficiadas con tu software?
+  
     Las áreas de comunicación son las que más saldrian beneficiadas en la empresa. El software permite traducciones en tiempo real de contenido inglés a español en cuestión de segundos, lo que facilita la traducción de correos, documentos o chats con clientes internacionales.
     
 - ¿Qué impacto operativo esperas en las operaciones diarias?
